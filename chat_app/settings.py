@@ -126,7 +126,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'  # इसे अपने लोकल टाइमज़ोन के अनुसार अपडेट करें
+USE_TZ = True
+
 
 USE_I18N = True
 
