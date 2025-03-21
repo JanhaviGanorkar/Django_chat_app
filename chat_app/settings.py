@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
-
+import dj_database_url
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',  # Custom class for debug messages
     messages.INFO: 'alert-info',    # Bootstrap info color
@@ -30,15 +30,17 @@ LOGIN_URL = 'login'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load .env file
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fv@!-bs_yfk2!)c!8%$=qvhyxd)yfbo4z6cz&(eo@v6p2es7@6'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -102,6 +104,8 @@ DATABASES = {
     }
 }
 
+# DATABASES['default'] = dj_database_url.parse("postgresql://chat_5zkv_user:MSSgBPaCHTGjbGmsUfOF3N36288iBXj4@dpg-cvdbkkqn91rc73df27o0-a.singapore-postgres.render.com/chat_5zkv")
+# postgresql://:MSSgBPaCHTGjbGmsUfOF3N36288iBXj4@dpg-cvdbkkqn91rc73df27o0-a.singapore-postgres.render.com/chat_5zkv
 # WSGI_APPLICATION = 'chat_app.wsgi.application'
 
 # Password validation
@@ -133,6 +137,7 @@ USE_TZ = True
 
 USE_I18N = True
 
+# DEBUG = False
 
 
 # Static files (CSS, JavaScript, Images)
