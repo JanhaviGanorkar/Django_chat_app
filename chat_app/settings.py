@@ -105,6 +105,18 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'chat_5zkv',
+#         'USER': 'chat_5zkv_user',
+#         'PASSWORD': 'your-password',
+#         'HOST': 'your-db-host',
+#         'PORT': '5432',
+#     }
+# }
+
+
 DATABASES['default'] = dj_database_url.parse("postgresql://chat_5zkv_user:MSSgBPaCHTGjbGmsUfOF3N36288iBXj4@dpg-cvdbkkqn91rc73df27o0-a.singapore-postgres.render.com/chat_5zkv")
 # postgresql://:MSSgBPaCHTGjbGmsUfOF3N36288iBXj4@dpg-cvdbkkqn91rc73df27o0-a.singapore-postgres.render.com/chat_5zkv
 # WSGI_APPLICATION = 'chat_app.wsgi.application'
